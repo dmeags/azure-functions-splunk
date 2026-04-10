@@ -230,20 +230,29 @@
     },
     "resources": [
         {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storageAccountName')]",
-            "apiVersion": "2019-06-01",
-            "location": "[resourceGroup().location]",
-            "tags": "[if(contains(parameters('tagsByResource'), 'Microsoft.Storage/storageAccounts'), parameters('tagsByResource')['Microsoft.Storage/storageAccounts'], json('{}'))]",
-            "kind": "StorageV2",
-            "sku": {
-                "name": "[parameters('storageAccountType')]"
-            },
-            "properties": {
-                "minimumTlsVersion": "[parameters('storageAccountTLS')]",
-                "requireInfrastructureEncryption": true
-            }
-        },
+  "type": "Microsoft.Storage/storageAccounts",
+  "apiVersion": "2022-09-01",
+  "name": "[variables('storageAccountName')]",
+  "location": "[resourceGroup().location]",
+  "kind": "StorageV2",
+  "sku": {
+    "name": "Standard_LRS"
+  },
+  "properties": {
+    "supportsHttpsTrafficOnly": true,
+    "minimumTlsVersion": "TLS1_2",
+    "encryption": {
+      "requireInfrastructureEncryption": true,
+      "keySource": "Microsoft.Storage",
+      "services": {
+        "blob": { "enabled": true },
+        "file": { "enabled": true },
+        "queue": { "enabled": true },
+        "table": { "enabled": true }
+      }
+    }
+  }
+},
         {
             "apiVersion": "2015-05-01",
             "name": "[variables('functionAppName')]",
