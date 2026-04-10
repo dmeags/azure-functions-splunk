@@ -25,8 +25,6 @@
             "type": "string",
             "defaultValue": "TLS1_2",
             "allowedValues": [
-                "TLS1_0",
-                "TLS1_1",
                 "TLS1_2"
             ],
             "metadata": {
@@ -237,12 +235,13 @@
             "apiVersion": "2019-06-01",
             "location": "[resourceGroup().location]",
             "tags": "[if(contains(parameters('tagsByResource'), 'Microsoft.Storage/storageAccounts'), parameters('tagsByResource')['Microsoft.Storage/storageAccounts'], json('{}'))]",
-            "kind": "Storage",
+            "kind": "StorageV2",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
             "properties": {
-                "minimumTlsVersion": "[parameters('storageAccountTLS')]"
+                "minimumTlsVersion": "[parameters('storageAccountTLS')]",
+                "requireInfrastructureEncryption": true
             }
         },
         {
