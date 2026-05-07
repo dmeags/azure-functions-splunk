@@ -322,7 +322,7 @@
                             "value": "[parameters('activityLogSourceType')]"
                         },
                         {
-                            "name": "AzureWebJobs.activity-logs.Disabled",
+                            "name": "AzureWebJobs.activity_logs.Disabled",
                             "value": "[parameters('activityLogDisabled')]"
                         },
 
@@ -339,7 +339,7 @@
                             "value": "[parameters('aadLogSourceType')]"
                         },
                         {
-                            "name": "AzureWebJobs.aad-logs.Disabled",
+                            "name": "AzureWebJobs.aad_logs.Disabled",
                             "value": "[parameters('aadLogDisabled')]"
                         },
 
@@ -356,7 +356,7 @@
                             "value": "[parameters('aadNoninteractiveLogSourceType')]"
                         },
                         {
-                            "name": "AzureWebJobs.aad-signin-logs-non-interactive.Disabled",
+                            "name": "AzureWebJobs.aad_signin_logs_non_interactive.Disabled",
                             "value": "[parameters('aadNoninteractiveLogDisabled')]"
                         },
 
@@ -373,7 +373,7 @@
                             "value": "[parameters('aadServicePrincipalLogSourceType')]"
                         },
                         {
-                            "name": "AzureWebJobs.aad-signin-logs-service-principal.Disabled",
+                            "name": "AzureWebJobs.aad_signin_logs_service_principal.Disabled",
                             "value": "[parameters('aadServicePrincipalLogDisabled')]"
                         },
 
@@ -407,7 +407,7 @@
                             "value": "[parameters('diagnosticsSourceType')]"
                         },
                         {
-                            "name": "AzureWebJobs.diatnostic-logs.Disabled",
+                            "name": "AzureWebJobs.diagnostic_logs.Disabled",
                             "value": "[parameters('diagnosticsDisabled')]"
                         },
 
